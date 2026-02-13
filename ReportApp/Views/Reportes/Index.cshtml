@@ -1,0 +1,29 @@
+@model IEnumerable<ReportApp.Models.Venta>
+
+<section class="section">
+    <div class="container">
+        <h1 class="title has-text-light">Ventas registradas</h1>
+
+        <table class="table is-striped is-hoverable">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Producto</th>
+                    <th>Monto</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var v in Model)
+                {
+                    <tr>
+                        <td>@v.Fecha.ToShortDateString()</td>
+                        <td>@v.Producto</td>
+                        <td>$@v.Monto</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <a class="button is-success" href="/Reportes/Generar">Generar PDF</a>
+    </div>
+</section>

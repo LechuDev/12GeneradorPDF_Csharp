@@ -1,0 +1,13 @@
+﻿@model ReportApp.Models.ErrorViewModel
+
+<div class="text-center">
+    <h1 class="text-danger">Error.</h1>
+    <h2 class="text-danger">Ha ocurrido un error al procesar tu solicitud.</h2>
+
+    @if (Model?.ShowRequestId ?? false)
+    {
+        <p>
+            <strong>ID de la solicitud:</strong> <code>@Model.RequestId</code>
+        </p>
+    }
+</div>
